@@ -56,7 +56,10 @@ const LayoutComponent = () => {
           {/* RÓLUNK */}
           <NavigationMenuItem>
             <NavigationMenuLink asChild>
-              <Link href="/about" className=" hover:border-b-1 transition pb-1">
+              <Link
+                href="/home/about"
+                className=" hover:border-b-1 transition pb-1"
+              >
                 RÓLUNK
               </Link>
             </NavigationMenuLink>

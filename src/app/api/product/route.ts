@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "../../../../client";
 import { Product } from "@prisma/client";
 
-export async function POST(req: NextRequest, res: Response) {
+export async function POST(req: NextRequest) {
   try {
     const body: Product = await req.json();
 
@@ -29,7 +29,7 @@ export async function POST(req: NextRequest, res: Response) {
   }
 }
 
-export async function GET(request: NextRequest, res: Response) {
+export async function GET(request: NextRequest) {
   try {
     const searchParams = request.nextUrl.searchParams;
     const query = searchParams.get("query");
@@ -43,7 +43,7 @@ export async function GET(request: NextRequest, res: Response) {
     const res = await prisma.product.findMany({
       where: {
         name: {
-          contains: query,
+          contains: data,
           mode: "insensitive",
         },
       },
@@ -61,7 +61,7 @@ export async function GET(request: NextRequest, res: Response) {
     return NextResponse.json({ res }, { status: 200 });
   } catch (e) {
     return NextResponse.json(
-      { message: "Error query product" },
+      { message: "Error query product: " + e },
       { status: 500 },
     );
   }

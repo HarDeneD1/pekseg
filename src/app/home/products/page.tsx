@@ -8,7 +8,7 @@ import { Spinner } from "@/components/ui/Spinner";
 import ProductContainer from "@/components/products/ProductContainer";
 
 const ProductsPage = () => {
-  const { query, setQuery } = useProductContext();
+  const { query } = useProductContext();
   const [loading, setLoading] = useState<boolean>(true);
   const [products, setProducts] = useState<Product[]>([]);
 

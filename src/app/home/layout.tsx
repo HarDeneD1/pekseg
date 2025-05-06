@@ -1,5 +1,6 @@
 import LayoutComponent from "@/components/LayoutComponent";
 import { ProductContextProvider } from "@/app/context/queryContext";
+import FooterComponent from "@/components/FooterComponent";
 
 export default function HomeLayout({
   children,
@@ -8,9 +9,14 @@ export default function HomeLayout({
 }>) {
   return (
     <ProductContextProvider>
-      <div>
+      <div className="flex flex-col min-h-screen ">
         <LayoutComponent />
-        {children}
+        <div className=" flex-grow">
+          <main>
+            {children}
+            <FooterComponent />
+          </main>
+        </div>
       </div>
     </ProductContextProvider>
   );
