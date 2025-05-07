@@ -24,7 +24,7 @@ const LayoutComponent = () => {
                   src={logo}
                   alt="logo"
                   width={100}
-                  className="rounded-full hover:bg-red-300 border"
+                  className="rounded-full hover:bg-red-300 border "
                 />
               </Link>
             </NavigationMenuLink>
@@ -32,21 +32,30 @@ const LayoutComponent = () => {
 
           <NavigationMenuItem>
             <NavigationMenuLink asChild>
-              <Link href="/home/products">TERMÉKEINK</Link>
+              <Link
+                href="/home/products"
+                className=" hover:border-b-1 transition pb-1"
+              >
+                TERMÉKEINK
+              </Link>
             </NavigationMenuLink>
           </NavigationMenuItem>
 
           {/* ÜZLETEINK */}
           <NavigationMenuItem>
             <NavigationMenuLink asChild>
-              <Link href="/about">ÜZLETEINK</Link>
+              <Link href="/about" className=" hover:border-b-1 transition pb-1">
+                ÜZLETEINK
+              </Link>
             </NavigationMenuLink>
           </NavigationMenuItem>
 
           {/* RÓLUNK */}
           <NavigationMenuItem>
             <NavigationMenuLink asChild>
-              <Link href="/about">RÓLUNK</Link>
+              <Link href="/about" className=" hover:border-b-1 transition pb-1">
+                RÓLUNK
+              </Link>
             </NavigationMenuLink>
           </NavigationMenuItem>
         </NavigationMenuList>

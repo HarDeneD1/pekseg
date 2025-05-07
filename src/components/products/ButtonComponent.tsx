@@ -5,7 +5,8 @@ import { useRouter } from "next/navigation";
 
 const ButtonComponent: React.FC<{
   children: ReactNode;
-}> = ({ children }) => {
+  active: boolean;
+}> = ({ children, active }) => {
   const router = useRouter();
 
   function handleClick() {
@@ -20,7 +21,7 @@ const ButtonComponent: React.FC<{
     <button
       onClick={handleClick}
       className={`text-amber-300 border p-5 rounded-xl text-center text-4xl mx-auto hover:cursor-pointer hover:bg-amber-300
-        transition-colors duration-300 hover:text-black  `}
+        transition-colors duration-300 hover:text-black ${active && "bg-amber-300 text-black"}`}
     >
       {children}
     </button>

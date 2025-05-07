@@ -1,14 +1,15 @@
-import ProductMainComponent from "@/components/products/ProductMainComponent";
+import ProductLayoutComponent from "@/components/products/ProductLayoutComponent";
 import React from "react";
 
-export default function ProductsLayout({
+export default async function ProductsLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
+  url: string;
 }>) {
   return (
-    <div className="flex flex-col bg-gray-800 h-screen bg-gradient-to-b from-black  opacity-95 ">
-      <ProductMainComponent></ProductMainComponent>
+    <div className="flex flex-col bg-gray-800 h-full bg-gradient-to-b from-black opacity-95 ">
+      <ProductLayoutComponent></ProductLayoutComponent>
       {children}
     </div>
   );

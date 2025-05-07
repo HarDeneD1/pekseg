@@ -1,10 +1,21 @@
 import React from "react";
-import SaltyProductsComponent from "@/components/products/SaltyProductsComponent";
+import CardComponent from "@/components/products/CardComponent";
 
 const SaltyPage = () => {
+  console.log("asd");
   return (
-    <div>
-      <SaltyProductsComponent></SaltyProductsComponent>
+    <div className=" m-10 items-center justify-center gap-2 grid-cols-3 grid ">
+      <CardComponent></CardComponent>
+      <CardComponent></CardComponent>
+      <CardComponent></CardComponent>
+      <CardComponent></CardComponent>
+      <CardComponent></CardComponent>
+      <CardComponent></CardComponent>
+      <CardComponent></CardComponent>
+      <CardComponent></CardComponent>
+      <CardComponent></CardComponent>
+      <CardComponent></CardComponent>
+      <CardComponent></CardComponent>
     </div>
   );
 };
