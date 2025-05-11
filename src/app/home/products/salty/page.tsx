@@ -1,7 +1,7 @@
 import React from "react";
-import CardComponent from "@/components/products/CardComponent";
 import { prisma } from "../../../../../client";
 import { Product } from "@prisma/client";
+import { DirectionAwareHover } from "@/components/ui/direction-aware-hover";
 
 const SaltyPage = async () => {
   const products: Product[] = await prisma.product.findMany({
@@ -9,9 +9,13 @@ const SaltyPage = async () => {
   });
 
   return (
-    <div className="grid m-10 lg:grid-cols-3 items-center justify-evenly  gap-10  sm:grid-cols-1 md:grid-cols-2  opacity-95 bg-gradient-to-b">
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 sm:grid-cols-1  h-[40rem] m-5 mx-auto items-center justify-center gap-5 ">
       {products.map((product) => (
-        <CardComponent key={product.id} product={product}></CardComponent>
+        <DirectionAwareHover imageUrl={product.image}>
+          <p className="font-bold text-xl">{product.name}</p>
+          <p className="font-normal text-sm">{product.price} Ft</p>
+          <p className="font-bold text-xl">{product.weight} g</p>
+        </DirectionAwareHover>
       ))}
     </div>
   );

@@ -14,7 +14,7 @@ import logo from "../../public/logo.jpg";
 
 const LayoutComponent = () => {
   return (
-    <div className="bg-black w-full px-10 py-5 flex justify-center items-center text-2xl text-amber-300">
+    <div className="bg-black w-full px-10 py-5 flex justify-center items-center text-2xl text-amber-300 h-full">
       <NavigationMenu>
         <NavigationMenuList className="flex items-center gap-12">
           <NavigationMenuItem>

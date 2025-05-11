@@ -8,7 +8,7 @@ export default async function ProductsLayout({
   url: string;
 }>) {
   return (
-    <div className="flex flex-col bg-gray-800 h-screen bg-gradient-to-b from-black opacity-95 ">
+    <div className="flex flex-col min-h-screen bg-gray-800 relative bg-gradient-to-b from-black opacity-95 pb-10">
       <ProductLayoutComponent></ProductLayoutComponent>
       {children}
     </div>
