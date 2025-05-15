@@ -1,4 +1,5 @@
 import LayoutComponent from "@/components/LayoutComponent";
+import { ProductContextProvider } from "@/app/context/queryContext";
 
 export default function HomeLayout({
   children,
@@ -6,9 +7,11 @@ export default function HomeLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div>
-      <LayoutComponent />
-      {children}
-    </div>
+    <ProductContextProvider>
+      <div>
+        <LayoutComponent />
+        {children}
+      </div>
+    </ProductContextProvider>
   );
 }

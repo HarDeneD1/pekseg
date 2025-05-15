@@ -20,8 +20,8 @@ const ButtonComponent: React.FC<{
   return (
     <button
       onClick={handleClick}
-      className={`text-amber-300 border p-5 rounded-xl text-center text-4xl mx-auto hover:cursor-pointer hover:bg-amber-300
-        transition-colors duration-300 hover:text-black ${active && "bg-amber-300 text-black"}`}
+      className={`text-sotetbarna hover:text-black border p-5 rounded-xl text-center text-4xl mx-auto hover:cursor-pointer hover:bg-amber-200
+        transition-colors duration-300 ${active && "bg-amber-200 text-sotetebbBarna border-2 shadow-sm"}`}
     >
       {children}
     </button>

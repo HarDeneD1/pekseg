@@ -28,3 +28,41 @@ export async function POST(req: NextRequest, res: Response) {
     return NextResponse.json({ message: "Error: " + e }, { status: 500 });
   }
 }
+
+export async function GET(request: NextRequest, res: Response) {
+  try {
+    const searchParams = request.nextUrl.searchParams;
+    const query = searchParams.get("query");
+
+    if (!query) {
+      return NextResponse.json({ message: "No query found" }, { status: 404 });
+    }
+
+    const data = query.trim();
+
+    const res = await prisma.product.findMany({
+      where: {
+        name: {
+          contains: query,
+          mode: "insensitive",
+        },
+      },
+    });
+    if (!res) {
+      return NextResponse.json(
+        { message: "Error finding product" },
+        { status: 404 },
+      );
+    }
+    if (res.length === 0) {
+      return NextResponse.json([], { status: 404 });
+    }
+
+    return NextResponse.json({ res }, { status: 200 });
+  } catch (e) {
+    return NextResponse.json(
+      { message: "Error query product" },
+      { status: 500 },
+    );
+  }
+}
