@@ -11,8 +11,11 @@ import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 import logo from "../../public/logo.jpg";
+import { usePathname } from "next/navigation";
 
 const LayoutComponent = () => {
+  const path = usePathname();
+
   return (
     <div className="bg-amber-100 w-full px-10 py-5 flex justify-center items-center text-2xl text-sotetbarna h-full">
       <NavigationMenu>
@@ -34,7 +37,7 @@ const LayoutComponent = () => {
             <NavigationMenuLink asChild>
               <Link
                 href="/home/products"
-                className=" hover:border-b-1 transition pb-1"
+                className={`hover:border-b-1 transition  pb-1 ${path === "/home/products" ? "border-b-1" : ""}`}
               >
                 TERMÉKEINK
               </Link>
@@ -46,7 +49,7 @@ const LayoutComponent = () => {
             <NavigationMenuLink asChild>
               <Link
                 href="/home/shops"
-                className=" hover:border-b-1 transition pb-1"
+                className={`hover:border-b-1 transition pb-1 ${path === "/home/shops" ? "border-b-1" : ""}`}
               >
                 ÜZLETEINK
               </Link>
@@ -58,7 +61,7 @@ const LayoutComponent = () => {
             <NavigationMenuLink asChild>
               <Link
                 href="/home/about"
-                className=" hover:border-b-1 transition pb-1"
+                className={`hover:border-b-1 transition pb-1 ${path === "/home/about" ? "border-b-1" : ""}`}
               >
                 RÓLUNK
               </Link>

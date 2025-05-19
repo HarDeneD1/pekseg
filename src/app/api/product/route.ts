@@ -48,6 +48,7 @@ export async function GET(request: NextRequest) {
         },
       },
     });
+
     if (!res) {
       return NextResponse.json(
         { message: "Error finding product" },
@@ -55,7 +56,7 @@ export async function GET(request: NextRequest) {
       );
     }
     if (res.length === 0) {
-      return NextResponse.json([], { status: 404 });
+      return NextResponse.json({ res: null }, { status: 404 });
     }
 
     return NextResponse.json({ res }, { status: 200 });

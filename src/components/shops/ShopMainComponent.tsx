@@ -23,7 +23,7 @@ const ShopMainComponent = () => {
     },
   ];
   return (
-    <div>
+    <div className="flex m-10">
       <Carousel slides={data}></Carousel>
     </div>
   );
