@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Carousel from "@/components/ui/carousel";
+import { Carousel } from "@/components/ui/carousel";
 
 const ShopMainComponent = () => {
   const data = [
@@ -23,7 +23,7 @@ const ShopMainComponent = () => {
     },
   ];
   return (
-    <div className="flex m-10">
+    <div className="flex overflow-x-hidden overflow-y-hidden mb-20 mt-5 ">
       <Carousel slides={data}></Carousel>
     </div>
   );

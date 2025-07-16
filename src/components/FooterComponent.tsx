@@ -5,9 +5,9 @@ import { FacebookIcon, InstagramIcon } from "lucide-react";
 
 const FooterComponent = () => {
   return (
-    <footer className="z-10 bg-sotetebbBarna text-white py-8 w-full flex align-bottom">
+    <footer className="z-10 bg-sotetebbBarna text-white py-8 w-full flex align-bottom ">
       <div className="max-w-6xl mx-auto flex flex-row justify-evenly w-full text-center">
-        <div className="flex">
+        <div className="flex max-sm:hidden">
           <Image
             height={100}
             alt={"logo"}
@@ -18,7 +18,7 @@ const FooterComponent = () => {
         <div>
           <h2 className="text-xl font-bold mb-2">Szentmiklósi pékség</h2>
           <p className="text-sm">
-            © {new Date().getFullYear()} Cégnév. Minden jog fenntartva.
+            © {new Date().getFullYear()} Szentmiklósi. Minden jog fenntartva.
           </p>
         </div>
 

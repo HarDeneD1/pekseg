@@ -17,9 +17,9 @@ const LayoutComponent = () => {
   const path = usePathname();
 
   return (
-    <div className="bg-amber-100 w-full px-10 py-5 flex justify-center items-center text-2xl text-sotetbarna h-full">
+    <div className="bg-amber-100 w-full px-10 py-5 flex justify-center items-center md:text-2xl text-sotetbarna h-full text-xs sm:text-left">
       <NavigationMenu>
-        <NavigationMenuList className="flex items-center gap-12 ">
+        <NavigationMenuList className="flex items-center gap-12">
           <NavigationMenuItem>
             <NavigationMenuLink asChild>
               <Link href="/home">

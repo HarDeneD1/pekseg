@@ -22,7 +22,7 @@ const ProductLayoutComponent = () => {
   }
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col min-w-screen">
       <PlaceholdersAndVanishInput
         placeholders={[
           "Keress egy adott termék nevére ",
@@ -34,7 +34,7 @@ const ProductLayoutComponent = () => {
           setQuery("");
         }}
       ></PlaceholdersAndVanishInput>
-      <div className="flex flex-row m-6">
+      <div className="flex max-w-screen flex-row gap-5 m-5 max-sm: text-left bg-amber-50 pt-5">
         <ButtonComponent active={path === "/home/products/salty"}>
           Sós sütemények
         </ButtonComponent>

@@ -6,6 +6,7 @@ import { Product } from "@prisma/client";
 import { Spinner } from "@/components/ui/Spinner";
 import ProductContainer from "@/components/products/ProductContainer";
 import { ContainerTextFlip } from "@/components/ui/container-text-flip";
+import CardComponent from "@/components/products/CardComponent";
 
 const ProductsPage = () => {
   const { query } = useProductContext();
@@ -26,7 +27,7 @@ const ProductsPage = () => {
   if (loading) {
     return <Spinner className=" m-auto text-amber-300 text-4xl"></Spinner>;
   } else if (!query) {
-    return null;
+    return <CardComponent />;
   } else if (products === null) {
     return (
       <div className="flex m-auto">

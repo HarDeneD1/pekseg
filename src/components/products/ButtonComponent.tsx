@@ -20,7 +20,7 @@ const ButtonComponent: React.FC<{
   return (
     <button
       onClick={handleClick}
-      className={`text-sotetbarna hover:text-black border p-5 rounded-xl text-center text-4xl mx-auto hover:cursor-pointer hover:bg-amber-200
+      className={`text-sotetbarna hover:text-black max-w-screen border p-5 rounded-xl text-center text-4xl max-sm:text-sm max-sm:p-3 mx-auto hover:cursor-pointer hover:bg-amber-200
         transition-colors duration-300 ${active && "bg-amber-100 text-sotetebbBarna border-1 shadow-sm"}`}
     >
       {children}
